@@ -28,7 +28,12 @@ fun AppNavigation(navController: NavHostController) {
             // capturamos el mensaje del parametro
             val mensaje = backStackEntry.arguments?.getString("mensaje") ?: ""
             // ruta que lleva a ResultScreen
-            ResultScreen(mensaje = mensaje)
+            ResultScreen(
+                mensaje = mensaje,
+                onNavigate = {
+                    navController.navigate("home")
+                }
+            )
         }
     }
 }
