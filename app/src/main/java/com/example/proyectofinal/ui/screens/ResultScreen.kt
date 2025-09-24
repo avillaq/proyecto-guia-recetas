@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -24,37 +23,34 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun HomeScreen() {
+fun ResultScreen() {
     Scaffold() { innerPadding ->
         var texto by remember { mutableStateOf("") }
 
         Column (
-            // padding
             modifier = Modifier.fillMaxSize().padding(innerPadding),
-            // Elementos centrados
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Bienvenido",
-                fontSize = 24.sp, // tamaño de texto
-                fontWeight = FontWeight.Bold // negrita
+                text = "Tu texto es:",
+                fontSize = 24.sp,
             )
-            Spacer(modifier = Modifier.height(24.dp)) // espaciado
-            TextField(
-                value = texto,
-                onValueChange = { texto = it },
-                label = { Text("Escribe algo") } // placeholder
+            Spacer(modifier = Modifier.height(24.dp))
+            Text(
+                text = "",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold
             )
             Spacer(modifier = Modifier.height(24.dp))
             Button(onClick = {}) {
-                Text(text = "Enviar Texto")
+                Text(text = "Atras")
             }
         }
     }
 }
 @Preview(showSystemUi = true)
 @Composable
-fun PreviewHomeScreen() {
-    HomeScreen()
+fun PreviewResultScreen() {
+    ResultScreen()
 }
