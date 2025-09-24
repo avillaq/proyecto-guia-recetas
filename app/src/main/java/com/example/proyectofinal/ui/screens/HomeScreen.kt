@@ -47,7 +47,7 @@ fun HomeScreen(onNavigate: (String) -> Unit) {
                 label = { Text("Escribe algo") } // placeholder
             )
             Spacer(modifier = Modifier.height(24.dp))
-            Button(onClick = { onNavigate }) {
+            Button(onClick = { onNavigate(texto) }) {
                 Text(text = "Enviar Texto")
             }
         }
