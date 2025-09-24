@@ -31,7 +31,7 @@ fun AppNavigation(navController: NavHostController) {
             ResultScreen(
                 mensaje = mensaje,
                 onNavigate = {
-                    navController.navigate("home")
+                    navController.popBackStack()
                 }
             )
         }
