@@ -23,9 +23,8 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun ResultScreen() {
+fun ResultScreen(mensaje : String, onNavigate : () -> Unit) {
     Scaffold() { innerPadding ->
-        var texto by remember { mutableStateOf("") }
 
         Column (
             modifier = Modifier.fillMaxSize().padding(innerPadding),
@@ -38,12 +37,12 @@ fun ResultScreen() {
             )
             Spacer(modifier = Modifier.height(24.dp))
             Text(
-                text = "",
+                text = mensaje,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
             Spacer(modifier = Modifier.height(24.dp))
-            Button(onClick = {}) {
+            Button(onClick = {onNavigate}) {
                 Text(text = "Atras")
             }
         }
@@ -52,5 +51,5 @@ fun ResultScreen() {
 @Preview(showSystemUi = true)
 @Composable
 fun PreviewResultScreen() {
-    ResultScreen()
+    //ResultScreen()
 }
