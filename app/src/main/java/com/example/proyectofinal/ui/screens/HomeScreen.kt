@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(onNavigate: (String) -> Unit) {
     Scaffold() { innerPadding ->
         var texto by remember { mutableStateOf("") }
 
@@ -47,7 +47,7 @@ fun HomeScreen() {
                 label = { Text("Escribe algo") } // placeholder
             )
             Spacer(modifier = Modifier.height(24.dp))
-            Button(onClick = {}) {
+            Button(onClick = { onNavigate }) {
                 Text(text = "Enviar Texto")
             }
         }
@@ -56,5 +56,5 @@ fun HomeScreen() {
 @Preview(showSystemUi = true)
 @Composable
 fun PreviewHomeScreen() {
-    HomeScreen()
+    //HomeScreen()
 }
