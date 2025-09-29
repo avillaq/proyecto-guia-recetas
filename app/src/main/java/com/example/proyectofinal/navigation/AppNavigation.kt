@@ -6,21 +6,26 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.proyectofinal.ui.screens.AdaptativoScreen
 import com.example.proyectofinal.ui.screens.HomeScreen
 import com.example.proyectofinal.ui.screens.ResultScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = AppScreens.Home.route) {
+    NavHost(navController = navController, startDestination = AppScreens.Adaptativo.route) {
         composable(
-            route = AppScreens.Home.route // ruta "home/"
+            route = AppScreens.Home.route // ruta "/home"
         ) {
             // ruta que lleva a HomeScreen
             HomeScreen(onNavigate = { mensaje: String ->
                 navController.navigate("result/$mensaje")
             })
         }
-
+        composable(
+            route = AppScreens.Adaptativo.route // ruta "/adaptativo"
+        ) {
+            AdaptativoScreen()
+        }
         composable(
             route = AppScreens.Result.route, // ruta "result/{mensaje}"
             arguments = listOf(navArgument("mensaje") { type = NavType.StringType })
