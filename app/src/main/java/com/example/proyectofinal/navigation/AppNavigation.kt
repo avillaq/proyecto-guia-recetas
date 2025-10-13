@@ -14,7 +14,7 @@ import com.example.proyectofinal.ui.screens.FormularioScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = AppScreens.Adaptativo.route) {
+    NavHost(navController = navController, startDestination = AppScreens.Formulario.route) {
         composable(
             route = AppScreens.Home.route // ruta "/home"
         ) {

@@ -67,7 +67,8 @@ fun FormularioScreen(onNavigate: (String) -> Unit) {
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 Button (onClick = {
-                    /* cancelamos el registro */
+                    nombre = ""
+                    correo = ""
                 }) {
                     Text("Cancelar")
                 }
