@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.proyectofinal.ui.screens.AdaptativoScreen
+import com.example.proyectofinal.ui.screens.CirculoScreen
 import com.example.proyectofinal.ui.screens.HomeScreen
 import com.example.proyectofinal.ui.screens.ResultScreen
 import com.example.proyectofinal.ui.screens.FormularioScreen
@@ -14,7 +15,7 @@ import com.example.proyectofinal.ui.screens.FormularioScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = AppScreens.Formulario.route) {
+    NavHost(navController = navController, startDestination = AppScreens.Circulo.route) {
         composable(
             route = AppScreens.Home.route // ruta "/home"
         ) {
@@ -31,10 +32,14 @@ fun AppNavigation(navController: NavHostController) {
         composable(
             route = AppScreens.Formulario.route // ruta "/registro"
         ) {
-            // ruta que lleva a HomeScreen para ver los datos del registro
             FormularioScreen(onNavigate = { mensaje: String ->
                 navController.navigate("result/$mensaje")
             })
+        }
+        composable(
+            route = AppScreens.Circulo.route // ruta "/circulo"
+        ) {
+            CirculoScreen()
         }
         composable(
             route = AppScreens.Result.route, // ruta "result/{mensaje}"

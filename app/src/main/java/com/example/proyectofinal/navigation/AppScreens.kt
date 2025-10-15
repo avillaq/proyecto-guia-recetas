@@ -5,4 +5,5 @@ sealed class AppScreens(val route: String) {
     object Result : AppScreens("result/{mensaje}")
     object Adaptativo : AppScreens("adaptativo")
     object Formulario : AppScreens("registro")
+    object Circulo : AppScreens("circulo")
 }
