@@ -1,7 +1,9 @@
 package com.example.proyectofinal.ui.screens
 
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,7 +19,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,12 +30,24 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun CirculoScreen() {
     val radioMinimo = 100f
     val radioMaximo = 450f
     var radioActual by remember { mutableFloatStateOf(radioMinimo) }
+
+    var isPresionado by remember { mutableStateOf(false) }
+    val rutina = rememberCoroutineScope()
+    val escala by animateFloatAsState(
+        targetValue = if (isPresionado) 0.8f else 1f,
+        animationSpec = spring(
+            dampingRatio = 0.4f,
+            stiffness = Spring.StiffnessLow
+        )
+    )
 
     Scaffold() { innerPadding ->
         Column (
@@ -40,7 +56,7 @@ fun CirculoScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // circulo
-            Canvas (modifier = Modifier.size(100.dp)) {
+            Canvas (modifier = Modifier.size(100.dp).scale(escala)) {
                 drawCircle(Color.Red, radius = radioActual)
             }
 
@@ -50,7 +66,11 @@ fun CirculoScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Button (onClick = { // animar circulo
-                    /**/
+                    isPresionado = !isPresionado
+                    rutina.launch {
+                        delay(200)
+                        isPresionado = false
+                    }
                 }) {
                     Text(text = "Animar", fontSize = 18.sp)
                 }
