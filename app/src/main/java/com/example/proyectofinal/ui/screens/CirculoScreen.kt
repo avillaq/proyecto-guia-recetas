@@ -1,6 +1,7 @@
 package com.example.proyectofinal.ui.screens
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -28,9 +29,9 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun CirculoScreen() {
-    val escalaMinima = 1f
-    val escalaMaxima = 3.5f
-    var escalaActual by remember { mutableFloatStateOf(escalaMinima) }
+    val radioMinimo = 100f
+    val radioMaximo = 450f
+    var radioActual by remember { mutableFloatStateOf(radioMinimo) }
 
     Scaffold() { innerPadding ->
         Column (
@@ -39,8 +40,8 @@ fun CirculoScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // circulo
-            Canvas (modifier = Modifier.size(100.dp).scale(escalaActual)) {
-                drawCircle(Color.Red)
+            Canvas (modifier = Modifier.size(100.dp)) {
+                drawCircle(Color.Red, radius = radioActual)
             }
 
             // botones
@@ -61,15 +62,15 @@ fun CirculoScreen() {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Button (onClick = { // reducir tamaño
-                        if (escalaActual > escalaMinima) {
-                            escalaActual = escalaActual - 0.3f
+                        if (radioActual > radioMinimo) {
+                            radioActual = radioActual - 30f
                         }
                     }) {
                         Text(text = "-", fontSize = 24.sp)
                     }
                     Button (onClick = { // aumentar tamaño
-                        if (escalaActual < escalaMaxima) {
-                            escalaActual = escalaActual + 0.3f
+                        if (radioActual < radioMaximo) {
+                            radioActual = radioActual + 30f
                         }
                     }) {
                         Text("+", fontSize = 24.sp)
