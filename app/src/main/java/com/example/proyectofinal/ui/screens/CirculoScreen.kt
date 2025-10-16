@@ -14,6 +14,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
@@ -26,7 +30,7 @@ import androidx.compose.ui.unit.sp
 fun CirculoScreen() {
     val escalaMinima = 1f
     val escalaMaxima = 3.5f
-
+    var escalaActual by remember { mutableFloatStateOf(escalaMinima) }
 
     Scaffold() { innerPadding ->
         Column (
@@ -35,7 +39,7 @@ fun CirculoScreen() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // circulo
-            Canvas (modifier = Modifier.size(100.dp).scale(1f)) {
+            Canvas (modifier = Modifier.size(100.dp).scale(escalaActual)) {
                 drawCircle(Color.Red)
             }
 
@@ -57,12 +61,16 @@ fun CirculoScreen() {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Button (onClick = { // reducir tamaño
-                        /**/
+                        if (escalaActual > escalaMinima) {
+                            escalaActual = escalaActual - 0.3f
+                        }
                     }) {
                         Text(text = "-", fontSize = 24.sp)
                     }
                     Button (onClick = { // aumentar tamaño
-                        /**/
+                        if (escalaActual < escalaMaxima) {
+                            escalaActual = escalaActual + 0.3f
+                        }
                     }) {
                         Text("+", fontSize = 24.sp)
                     }
