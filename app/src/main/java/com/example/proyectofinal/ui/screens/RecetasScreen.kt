@@ -23,37 +23,6 @@ data class Receta(
     val imagen: Int
 )
 
-
-
-
-@Composable
-fun RecetasScreen() {
-    val recetas = obtenerRecetas() // función que retorna lista de 20 recetas
-
-    LazyColumn {
-        items(recetas) { receta ->
-            RecetaItem(receta)
-        }
-    }
-}
-
-@Composable
-fun RecetaItem(receta: Receta) {
-    Row(modifier = Modifier.padding(8.dp)) {
-        Image(
-            painter = painterResource(id = receta.imagen),
-            contentDescription = receta.nombre,
-            modifier = Modifier.size(64.dp)
-        )
-        Column(modifier = Modifier.padding(start = 8.dp)) {
-            Text(text = receta.nombre, style = MaterialTheme.typography.h6)
-            Text(text = "Ingredientes: ${receta.ingredientes}")
-            Text(text = "Tipo: ${receta.tipo}")
-        }
-    }
-}
-
-
 @Composable
 fun RecetasScreen() {
     Scaffold() { innerPadding ->
