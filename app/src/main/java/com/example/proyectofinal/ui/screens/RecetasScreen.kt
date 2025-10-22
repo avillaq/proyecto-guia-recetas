@@ -23,6 +23,34 @@ data class Receta(
     val imagen: Int
 )
 
+val recetas = listOf(
+    Receta("Lomo Saltado", "Carne, cebolla, tomate, papas", "Almuerzo", "https://www.themealdb.com/images/media/meals/utxqpt1511639216.jpg"),
+    Receta("Ceviche", "Pescado, limón, cebolla, ají", "Almuerzo", "https://www.themealdb.com/images/media/meals/1548772327.jpg"),
+    Receta("Ají de Gallina", "Pollo, ají amarillo, pan, leche", "Almuerzo", "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg"),
+    Receta("Tallarines Verdes", "Pasta, albahaca, espinaca, queso", "Cena", "https://picsum.photos/200?random=1"),
+    Receta("Arroz con Leche", "Arroz, leche, canela, azúcar", "Postre", "https://picsum.photos/200?random=2"),
+    Receta("Anticuchos", "Corazón de res, ají panca, vinagre", "Cena", "https://picsum.photos/200?random=3"),
+    Receta("Papa a la Huancaína", "Papa, ají amarillo, queso, leche", "Entrada", "https://picsum.photos/200?random=4"),
+    Receta("Pollo al Horno", "Pollo, ajo, romero, papas", "Almuerzo", "https://picsum.photos/200?random=5"),
+    Receta("Chicha Morada", "Maíz morado, piña, canela, clavo", "Bebida", "https://picsum.photos/200?random=6"),
+    Receta("Mazamorra Morada", "Maíz morado, frutas, canela", "Postre", "https://picsum.photos/200?random=7"),
+    Receta("Panqueques", "Harina, huevo, leche, mantequilla", "Desayuno", "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg"),
+    Receta("Ensalada de Quinoa", "Quinoa, tomate, pepino, limón", "Cena", "https://picsum.photos/200?random=8"),
+    Receta("Tamal", "Maíz, carne, ají, aceituna", "Desayuno", "https://picsum.photos/200?random=9"),
+    Receta("Empanadas", "Harina, carne, cebolla, huevo", "Entrada", "https://www.themealdb.com/images/media/meals/empanadas.jpg"),
+    Receta("Sopa Criolla", "Fideos, carne, leche, huevo", "Cena", "https://picsum.photos/200?random=10"),
+    Receta("Chocotejas", "Chocolate, manjar, nueces", "Postre", "https://picsum.photos/200?random=11"),
+    Receta("Juane", "Arroz, pollo, huevo, hoja de bijao", "Almuerzo", "https://picsum.photos/200?random=12"),
+    Receta("Torta de Chocolate", "Harina, cacao, huevo, azúcar", "Postre", "https://www.themealdb.com/images/media/meals/tvxugv1541208221.jpg"),
+    Receta("Leche Asada", "Leche, huevo, azúcar, vainilla", "Postre", "https://picsum.photos/200?random=13"),
+    Receta("Sanguchón de Chicharrón", "Pan, chicharrón, camote, salsa criolla", "Desayuno", "https://picsum.photos/200?random=14"),
+    Receta("Ocopa Arequipeña", "Papa, huacatay, maní, queso", "Entrada", "https://picsum.photos/200?random=15"),
+    Receta("Zarza de Patitas", "Patitas de cerdo, cebolla, ají", "Almuerzo", "https://picsum.photos/200?random=16"),
+    Receta("Chupe de Camarones", "Camarones, leche, papa, huevo", "Almuerzo", "https://picsum.photos/200?random=17"),
+    Receta("Tequeños", "Harina, queso, aceite", "Entrada", "https://picsum.photos/200?random=18"),
+    Receta("Causa Limeña", "Papa amarilla, pollo, palta, mayonesa", "Entrada", "https://picsum.photos/200?random=19")
+)
+
 @Composable
 fun RecetasScreen() {
     Scaffold() { innerPadding ->
