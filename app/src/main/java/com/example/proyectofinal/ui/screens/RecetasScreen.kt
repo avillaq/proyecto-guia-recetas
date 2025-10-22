@@ -20,7 +20,7 @@ data class Receta(
     val nombre: String,
     val ingredientes: String,
     val tipo: String,
-    val imagen: Int
+    val imagen: String
 )
 
 val recetas = listOf(
