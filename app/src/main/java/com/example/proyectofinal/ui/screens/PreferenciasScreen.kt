@@ -1,6 +1,5 @@
 package com.example.proyectofinal.ui.screens
 
-import android.widget.Toolbar
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,9 +15,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,6 +27,8 @@ import com.example.proyectofinal.ui.theme.ProyectoFinalTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PreferenciasScreen() {
+    val temaState = remember { mutableStateOf(true) }
+
     Scaffold(
         topBar = {
             TopAppBar (
@@ -60,12 +62,11 @@ fun PreferenciasScreen() {
                     Text("Oscuro", fontSize = 16.sp)
                     Switch(
                         modifier = Modifier.padding(horizontal = 8.dp),
-                        checked = true,
-                        onCheckedChange = {  }
+                        checked = temaState.value,
+                        onCheckedChange = { temaState.value = it }
                     )
                     Text("Claro", fontSize = 16.sp)
                 }
-
             }
         }
     }
