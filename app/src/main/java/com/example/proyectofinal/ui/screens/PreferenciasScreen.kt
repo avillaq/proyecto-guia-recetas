@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.proyectofinal.ui.theme.ProyectoFinalTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,18 +53,28 @@ fun PreferenciasScreen() {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text("Tema", fontSize = 20.sp)
+                Row (
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                ){
+                    Text("Oscuro", fontSize = 16.sp)
+                    Switch(
+                        modifier = Modifier.padding(horizontal = 8.dp),
+                        checked = true,
+                        onCheckedChange = {  }
+                    )
+                    Text("Claro", fontSize = 16.sp)
+                }
 
-                Switch(
-                    checked = true,
-                    onCheckedChange = {  }
-                )
             }
         }
     }
 }
 
 @Composable
-@Preview
+@Preview(showBackground = true)
 fun PreferenciasScreenPreview() {
-    PreferenciasScreen()
+    ProyectoFinalTheme {
+        PreferenciasScreen()
+    }
 }
