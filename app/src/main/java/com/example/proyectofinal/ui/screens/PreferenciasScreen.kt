@@ -24,17 +24,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.proyectofinal.store.ThemeRepository
 import com.example.proyectofinal.store.ThemeType
+import com.example.proyectofinal.store.dataStore
 import com.example.proyectofinal.ui.preferencias.PreferenciasViewModel
 import com.example.proyectofinal.ui.preferencias.PreferenciasViewModelFactory
 import com.example.proyectofinal.ui.theme.ProyectoFinalTheme
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
