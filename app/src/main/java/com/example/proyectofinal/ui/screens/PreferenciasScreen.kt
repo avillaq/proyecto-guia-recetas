@@ -77,8 +77,8 @@ fun PreferenciasScreen() {
                 Text("Tema Oscuro", fontSize = 20.sp)
                 Switch(
                     checked = esModoOscuro,
-                    onCheckedChange = { nuevoValorBooleano ->
-                        viewModel.setTheme(nuevoValorBooleano)
+                    onCheckedChange = { nuevoValor ->
+                        viewModel.setTheme(nuevoValor)
                     }
                 )
             }
