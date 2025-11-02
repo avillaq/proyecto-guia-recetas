@@ -11,12 +11,13 @@ import com.example.proyectofinal.ui.screens.CirculoScreen
 import com.example.proyectofinal.ui.screens.HomeScreen
 import com.example.proyectofinal.ui.screens.ResultScreen
 import com.example.proyectofinal.ui.screens.FormularioScreen
+import com.example.proyectofinal.ui.screens.PreferenciasScreen
 import com.example.proyectofinal.ui.screens.RecetasScreen
 
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = AppScreens.Recetas.route) {
+    NavHost(navController = navController, startDestination = AppScreens.Preferencias.route) {
         composable(
             route = AppScreens.Home.route // ruta "/home"
         ) {
@@ -46,6 +47,11 @@ fun AppNavigation(navController: NavHostController) {
             route = AppScreens.Recetas.route // ruta "/recetas"
         ) {
             RecetasScreen()
+        }
+        composable (
+            route = AppScreens.Preferencias.route // ruta "/preferencias"
+        ) {
+            PreferenciasScreen()
         }
         composable(
             route = AppScreens.Result.route, // ruta "result/{mensaje}"
