@@ -74,21 +74,13 @@ fun PreferenciasScreen() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text("Tema", fontSize = 20.sp)
-                Row (
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                ){
-                    Text("Oscuro", fontSize = 16.sp)
-                    Switch(
-                        modifier = Modifier.padding(horizontal = 8.dp),
-                        checked = esModoOscuro,
-                        onCheckedChange = { nuevoValor ->
-                            viewModel.setTheme(nuevoValor)
-                        }
-                    )
-                    Text("Claro", fontSize = 16.sp)
-                }
+                Text("Tema Oscuro", fontSize = 20.sp)
+                Switch(
+                    checked = esModoOscuro,
+                    onCheckedChange = { nuevoValorBooleano ->
+                        viewModel.setTheme(nuevoValorBooleano)
+                    }
+                )
             }
         }
     }
