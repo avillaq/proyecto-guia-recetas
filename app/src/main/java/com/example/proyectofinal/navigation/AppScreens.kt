@@ -8,5 +8,7 @@ sealed class AppScreens(val route: String) {
     object Circulo : AppScreens("circulo")
     object Recetas : AppScreens("recetas")
     object Preferencias : AppScreens("preferencias")
-
+    object AccionesAdmin : AppScreens("accionesAdmin")
+    object CrearRecetas : AppScreens("crearRecetas")
+    object ListaRecetas : AppScreens("listaRecetas")
 }

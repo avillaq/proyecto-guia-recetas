@@ -13,6 +13,9 @@ import com.example.proyectofinal.ui.screens.ResultScreen
 import com.example.proyectofinal.ui.screens.FormularioScreen
 import com.example.proyectofinal.ui.screens.PreferenciasScreen
 import com.example.proyectofinal.ui.screens.RecetasScreen
+import com.example.proyectofinal.ui.screens.crud.AccionesAdminScreen
+import com.example.proyectofinal.ui.screens.crud.CrearRecetasScreen
+import com.example.proyectofinal.ui.screens.crud.ListaRecetasScreen
 
 
 @Composable
@@ -62,6 +65,34 @@ fun AppNavigation(navController: NavHostController) {
             // ruta que lleva a ResultScreen
             ResultScreen(
                 mensaje = mensaje,
+                onNavigate = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        /* CRUD */
+        // acciones de administrador
+        composable (
+            route = AppScreens.AccionesAdmin.route // ruta "/accionesAdmin"
+        ) {
+            AccionesAdminScreen()
+        }
+        // crear recetas en formulario
+        composable (
+            route = AppScreens.CrearRecetas.route // ruta "/crearRecetas"
+        ) {
+            CrearRecetasScreen(
+                onNavigate = {
+                    navController.popBackStack()
+                }
+            )
+        }
+        // lista de todas las recetas
+        composable (
+            route = AppScreens.ListaRecetas.route // ruta "/listaRecetas"
+        ) {
+            ListaRecetasScreen(
                 onNavigate = {
                     navController.popBackStack()
                 }
