@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CrearRecetasScreen (onNavigatetoBack: () -> Unit) {
+fun CrearRecetasScreen (onNavigateToBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar (
@@ -30,7 +30,9 @@ fun CrearRecetasScreen (onNavigatetoBack: () -> Unit) {
         }
     ) { innerPadding ->
         Column(
-            modifier = Modifier.fillMaxSize().padding(innerPadding).padding(horizontal = 16.dp),
+            modifier = Modifier.fillMaxSize()
+                .padding(innerPadding)
+                .padding(horizontal = 32.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

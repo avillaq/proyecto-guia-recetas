@@ -90,7 +90,7 @@ fun AppNavigation(navController: NavHostController) {
             route = AppScreens.CrearRecetas.route // ruta "/crearRecetas"
         ) {
             CrearRecetasScreen(
-                onNavigatetoBack = {
+                onNavigateToBack = {
                     navController.popBackStack()
                 }
             )
@@ -100,7 +100,7 @@ fun AppNavigation(navController: NavHostController) {
             route = AppScreens.ListaRecetas.route // ruta "/listaRecetas"
         ) {
             ListaRecetasScreen(
-                onNavigatetoBack = {
+                onNavigateToBack = {
                     navController.popBackStack()
                 }
             )
