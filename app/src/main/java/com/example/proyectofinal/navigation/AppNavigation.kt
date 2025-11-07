@@ -76,14 +76,21 @@ fun AppNavigation(navController: NavHostController) {
         composable (
             route = AppScreens.AccionesAdmin.route // ruta "/accionesAdmin"
         ) {
-            AccionesAdminScreen()
+            AccionesAdminScreen(
+                onNavigateToCrear = {
+                    navController.navigate(AppScreens.CrearRecetas.route)
+                },
+                onNavigateToLista = {
+                    navController.navigate(AppScreens.ListaRecetas.route)
+                }
+            )
         }
         // crear recetas en formulario
         composable (
             route = AppScreens.CrearRecetas.route // ruta "/crearRecetas"
         ) {
             CrearRecetasScreen(
-                onNavigate = {
+                onNavigatetoBack = {
                     navController.popBackStack()
                 }
             )
@@ -93,7 +100,7 @@ fun AppNavigation(navController: NavHostController) {
             route = AppScreens.ListaRecetas.route // ruta "/listaRecetas"
         ) {
             ListaRecetasScreen(
-                onNavigate = {
+                onNavigatetoBack = {
                     navController.popBackStack()
                 }
             )
