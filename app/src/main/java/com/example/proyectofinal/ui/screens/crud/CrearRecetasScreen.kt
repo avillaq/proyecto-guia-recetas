@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CrearRecetasScreen (onNavigate: () -> Unit) {
+fun CrearRecetasScreen (onNavigatetoBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar (
