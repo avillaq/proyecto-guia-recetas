@@ -20,7 +20,7 @@ import com.example.proyectofinal.ui.screens.crud.ListaRecetasScreen
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = AppScreens.Preferencias.route) {
+    NavHost(navController = navController, startDestination = AppScreens.AccionesAdmin.route) {
         composable(
             route = AppScreens.Home.route // ruta "/home"
         ) {
